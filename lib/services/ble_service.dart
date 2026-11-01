@@ -46,7 +46,7 @@ class DoseBleService {
       await FlutterBluePlus.stopScan();
       _emit(const BleUiState(BlePhase.connecting, message: 'Connecting…'));
       _device = device;
-      await device.connect(timeout: const Duration(seconds: 12));
+      await device.connect(license: License.nonprofit, timeout: const Duration(seconds: 12));
       try { await device.requestMtu(247); } catch (_) { /* iOS negotiates MTU itself; verify payload size on each target. */ }
       _connectionSub = device.connectionState.listen((s) { if (s == BluetoothConnectionState.disconnected) { _config = null; _emit(const BleUiState(BlePhase.idle, message: 'Device disconnected. Live values are now stale.')); } });
       final services = await device.discoverServices();
