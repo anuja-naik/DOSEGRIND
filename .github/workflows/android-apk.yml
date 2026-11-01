@@ -31,6 +31,8 @@ jobs:
         run: |
           rm -rf android
           flutter create --platforms=android --org com.dosegrind --project-name dosegrind_connect .
+          # flutter create may generate a starter test that references MyApp; this app uses DoseGrindApp.
+          rm -f test/widget_test.dart
 
       - name: Configure Android Bluetooth permissions
         run: |
@@ -55,12 +57,10 @@ jobs:
 
       - name: Analyze Dart code
         run: flutter analyze
-        continue-on-error: true
-
+ 
       - name: Run Flutter tests
         run: flutter test
-        continue-on-error: true
-
+ 
       - name: Build release APK
         run: flutter build apk --release
 
