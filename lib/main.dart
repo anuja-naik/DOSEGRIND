@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'models/device_snapshot.dart';
 import 'models/recipe.dart';
+import 'services/recipe_service.dart';
 import 'providers/app_state.dart';
 
 const ink = Color(0xFF18251E);
