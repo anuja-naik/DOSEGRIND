@@ -1,0 +1,28 @@
+name: dosegrind_connect
+description: Local-first recipe intelligence and live monitoring companion for the Atomberg Zenova Mixer Grinder.
+publish_to: 'none'
+version: 0.3.0+3
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+  flutter: '>=3.24.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  flutter_blue_plus: ^2.3.14
+  permission_handler: ^12.0.1
+  shared_preferences: ^2.5.3
+  intl: ^0.20.2
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/recipes.json
