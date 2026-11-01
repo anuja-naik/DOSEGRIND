@@ -28,7 +28,8 @@ jobs:
           cache: true
 
       - name: Regenerate Android platform scaffold
-        run: rm -rf android
+        run: |
+          rm -rf android
           flutter create --platforms=android --org com.dosegrind --project-name dosegrind_connect .
 
       - name: Configure Android Bluetooth permissions
